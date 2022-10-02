@@ -5,7 +5,6 @@ from typing import List
 
 import requests
 
-
 def get_search_url(geo_lat_from, geo_lng_from, geo_lat_to, geo_lng_to, page=None):
     # geo location parameters
     geo_lat_from_param = 'geo_lat_from=$geo_lat_from'
@@ -66,7 +65,7 @@ def parse_page(doc: str) -> List[Advertisement]:
 
 def parse_ad(ad_html: str) -> Advertisement:
 
-    id, title, price, price_per_sqm, property_level, total_bedrooms, total_bathrooms, construction_year, area, link = "", "", "", "", "", "", "", "", "", ""
+    id, title, price, price_per_sqm, property_level, total_bedrooms, total_bathrooms, construction_year, area, link, price_updates = "", "", "", "", "", "", "", "", "", "", ""
 
     id, link = "", ""
     if ad_html.a['href']:
@@ -103,4 +102,4 @@ def parse_ad(ad_html: str) -> Advertisement:
     if ad_html.find(class_="common-property-ad-address"):
         area = ad_html.find(class_="common-property-ad-address").string.strip()
 
-    return Advertisement(id, title, price, price_per_sqm, property_level, total_bedrooms, total_bathrooms, construction_year, area, link)
+    return Advertisement(id, title, price, price_per_sqm, property_level, total_bedrooms, total_bathrooms, construction_year, area, link, price_updates)

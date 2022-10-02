@@ -2,9 +2,8 @@
     ```
     python --version
     ```
-2. pip install requests
-3. pip install beautifulsoup4
-4. 
+2. pip install -r requirements.txt
+3. 
    ```
    python data_collector.py
    ```

@@ -1,5 +1,5 @@
 class Advertisement:
-    def __init__(self, id, title, price, price_per_sqm, property_level, total_bedrooms, total_bathrooms, construction_year, area, link):
+    def __init__(self, id, title, price, price_per_sqm, property_level, total_bedrooms, total_bathrooms, construction_year, area, link, price_updates):
         self.id = id
         self.title = title
         self.price = price
@@ -10,3 +10,4 @@ class Advertisement:
         self.construction_year = construction_year
         self.area = area
         self.link = link
+        self.price_updates = price_updates
